@@ -1,15 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
+      <h1>Roger Chavez</h1>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Roger Chavez's website is under construction. 
-        </p>
-	  {/*                                     <a
+        <p>Roger Chavez's website is under construction.</p>
+        {/*                                     <a
 	                   className="App-link"
 	             href="https://reactjs.org"
 	                        target="_blank"
@@ -17,7 +16,7 @@ function App() {
 	                                      >
 	   	                                    
 	   	                        Learn React
-	   </a> */} 
+	   </a> */}
       </header>
     </div>
   );
