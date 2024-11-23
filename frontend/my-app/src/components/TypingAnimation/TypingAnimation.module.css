@@ -1,0 +1,35 @@
+/* Fullscreen background */
+.landing {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Typing text wrapper */
+.text-wrapper {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Cursor blinking effect */
+.cursor {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-left: 5px;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+
+/* Typing effect */
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
