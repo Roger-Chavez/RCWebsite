@@ -10,18 +10,22 @@
 }
 
 /* Typing text wrapper */
-.text-wrapper {
+.textWrapper {
   font-size: 1.5rem;
-  display: flex;
-  align-items: center;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  color: white;
 }
 
 /* Cursor blinking effect */
 .cursor {
+  display: inline-block; /* Ensures block-like behavior while staying centered */
   font-weight: bold;
   font-size: 1.5rem;
-  margin-left: 5px;
   animation: blink 0.7s steps(2, start) infinite;
+  width: fit-content; /* Shrinks to the content size */
+  vertical-align: baseline;
 }
 
 /* Typing effect */
@@ -32,4 +36,14 @@
   to {
     opacity: 0;
   }
+}
+
+.typedText {
+  text-align: center; /* Centers text inside the span */
+  word-break: break-word; /* Forces long words to break */
+  width: fit-content; /* Shrinks to the content size */
+  max-width: 90%;
+  padding: 0 10px;
+  white-space: pre-wrap;
+  display: inline;
 }

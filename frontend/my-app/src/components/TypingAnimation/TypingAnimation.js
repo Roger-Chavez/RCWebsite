@@ -4,7 +4,7 @@ import style from "./TypingAnimation.module.css";
 const TypingAnimation = forwardRef(({ onComplete }, ref) => {
   const [text, setText] = useState("");
   const fullText = "Hi, I'm Roger Chavez. Welcome to my website!";
-  const typingSpeed = 100; // Typing speed in ms
+  const typingSpeed = 89; // Typing speed in ms
   const indexRef = useRef(0);
   const currentText = useRef("");
 
@@ -26,8 +26,10 @@ const TypingAnimation = forwardRef(({ onComplete }, ref) => {
   return (
     <div ref={ref} className={style.landing}>
       <div className={style.textWrapper}>
-        <span className={style.typedText}>{text}</span>
-        <span className={style.cursor}>▮</span>
+        <span className={style.typedText}>
+          {text}
+          <span className={style.cursor}>▮</span>
+        </span>
       </div>
     </div>
   );
