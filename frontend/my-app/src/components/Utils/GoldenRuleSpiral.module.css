@@ -1,0 +1,9 @@
+.myCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 99.2vw;
+  pointer-events: none;
+  z-index: 1000;
+  color: transparent;
+}
