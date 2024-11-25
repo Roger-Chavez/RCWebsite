@@ -1,7 +1,7 @@
 import logo from "../../logo.svg";
 import style from "./LandingPage.module.css";
-import React, { forwardRef, useState } from "react";
-import { Typography, Alert, Snackbar } from "@mui/material";
+import React, { forwardRef, useEffect, useState } from "react";
+import { Typography, Alert, Snackbar, Switch } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Drawer from "@mui/material/Drawer";
@@ -17,10 +17,13 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
-const LandingPage = forwardRef((props, ref) => {
+const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
 
+  // useEffect({
+
+  // },[checked])
   const handleClick = () => {
     setOpen(true);
   };
@@ -172,6 +175,7 @@ const LandingPage = forwardRef((props, ref) => {
       <Alert open={open} variant="filled" severity="success">
         Successfully connected to Roger's Website!
       </Alert>
+      <Switch checked={checked} onChange={onClick} color="warning" />
       <header className={style.AppHeader}>
         <img src={logo} className={style.AppLogo} alt="logo" />
         <p>Roger Chavez's website is under construction.</p>

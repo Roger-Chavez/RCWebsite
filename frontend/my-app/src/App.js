@@ -10,6 +10,7 @@ function App() {
   const [showLandingPage, setShowLandingPage] = useState(false);
   const [showTypingAnimation, setShowTypingAnimation] = useState(true);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [on, setOn] = useState(false);
   const nodeRef1 = useRef(null);
   const nodeRef2 = useRef(null);
   const handleAnimationComplete = () => {
@@ -17,12 +18,16 @@ function App() {
     setShowLandingPage(true); // Trigger LandingPage after TypingAnimation completes
   };
 
+  const handleSwitch = () => {
+    setOn((prev) => !prev);
+  };
+
   useEffect(() => {
     if (nodeRef2.current) {
       const { width, height } = nodeRef2.current.getBoundingClientRect();
       setDimensions({ width, height }); // Update state with the dimensions
     }
-  }, []);
+  }, [setDimensions]);
 
   return (
     <div className="App">
@@ -45,9 +50,13 @@ function App() {
             timeout={1000}
             classNames="my-node"
           >
-            <LandingPage ref={nodeRef1} />
+            <LandingPage ref={nodeRef1} checked={on} onClick={handleSwitch} />
           </CSSTransition>
-          <GoldenRuleSpiral width={800} height={494} orientation="horizontal" />
+        </>
+      ) : null}
+      {on ? (
+        <>
+          <GoldenRuleSpiral width={800} height={494} />
         </>
       ) : null}
     </div>
