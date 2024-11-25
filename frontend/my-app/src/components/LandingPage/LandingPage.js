@@ -21,9 +21,6 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
 
-  // useEffect({
-
-  // },[checked])
   const handleClick = () => {
     setOpen(true);
   };
@@ -179,14 +176,26 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
       <header className={style.AppHeader}>
         <img src={logo} className={style.AppLogo} alt="logo" />
         <p>Roger Chavez's website is under construction.</p>
+        <script
+          data-name="BMC-Widget"
+          data-cfasync="false"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+          data-id="chavezroger"
+          data-description="Support me on Buy me a coffee!"
+          data-message="Thank you for visiting!"
+          data-color="#FF5F5F"
+          data-position="Right"
+          data-x_margin="18"
+          data-y_margin="18"
+        ></script>
       </header>
-      <Snackbar
-        open={true}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        message="Loaded Roger's Website."
-        action={action}
-      />
+      <a href="https://www.buymeacoffee.com/chavezroger" target="_blank">
+        <img
+          src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
+          alt="Buy Me A Coffee"
+          style={{ height: "50px", width: "150px" }}
+        />
+      </a>
     </div>
   );
 });
