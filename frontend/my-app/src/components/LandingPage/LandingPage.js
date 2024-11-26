@@ -16,6 +16,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import WordAnimation from "../Utils/WordAnimation";
 
 const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   const [open, setOpen] = useState(false);
@@ -172,6 +173,7 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
       <Alert open={open} variant="filled" severity="success">
         Successfully connected to Roger's Website!
       </Alert>
+      <WordAnimation />
       <Switch checked={checked} onChange={onClick} color="warning" />
       <header className={style.AppHeader}>
         <img src={logo} className={style.AppLogo} alt="logo" />
