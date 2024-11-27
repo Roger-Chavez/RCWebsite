@@ -7,14 +7,11 @@ import WordAnimation from "../Utils/WordAnimation";
 
 const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: "#1A2027",
-    ...theme.typography.body2,
+    backgroundColor: checked ? "#1A2027" : "#fff",
+    color: checked ? theme.palette.text.secondary : theme.palette.text.primary,
     padding: theme.spacing(1),
     textAlign: "center",
     color: theme.palette.text.secondary,
-    ...theme.applyStyles("light", {
-      backgroundColor: "#fff",
-    }),
   }));
 
   return (

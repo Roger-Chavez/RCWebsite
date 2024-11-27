@@ -46,11 +46,11 @@ function App() {
           </CSSTransition>
         </>
       ) : null}
-      {on ? (
+      {/* {on ? (
         <>
           <GoldenRuleSpiral width={800} height={494} />
         </>
-      ) : null}
+      ) : null} */}
     </div>
   );
 }
