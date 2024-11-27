@@ -62,11 +62,11 @@ const WordAnimation = () => {
   return (
     <div className="rotating-text">
       <p>
-        <span className="word alizarin">Student.</span>
-        <span className="word wisteria">Son.</span>
-        <span className="word peter-river">Brother.</span>
-        <span className="word emerald">Creator.</span>
-        <span className="word sun-flower">Artist.</span>
+        <span className="word alizarin">Stay</span>
+        <span className="word wisteria">Hungry</span>
+        <span className="word peter-river">Stay</span>
+        <span className="word emerald">Foolish</span>
+        <span className="word sun-flower">Esteban Trabajos</span>
       </p>
     </div>
   );

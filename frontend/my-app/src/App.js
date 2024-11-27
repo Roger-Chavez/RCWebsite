@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import TypingAnimation from "./components/TypingAnimation/TypingAnimation";
 import LandingPage from "./components/LandingPage/LandingPage";
 import { CSSTransition } from "react-transition-group";
