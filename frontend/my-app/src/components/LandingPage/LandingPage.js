@@ -11,13 +11,12 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
     color: checked ? theme.palette.text.secondary : theme.palette.text.primary,
     padding: theme.spacing(1),
     textAlign: "center",
-    color: theme.palette.text.secondary,
   }));
 
   return (
     <>
       <Container maxWidth={"xl"}>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={{ paddingBottom: "20px" }}>
           <Grid size={{ xs: 12 }}>
             <Typography
               className={style.pageHeader}
@@ -39,7 +38,6 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
           </Grid>
           <Grid size={12}>
             <Item>
-              {"Victor --> "}
               <a
                 href="https://www.buymeacoffee.com/chavezroger"
                 target="_parent"
