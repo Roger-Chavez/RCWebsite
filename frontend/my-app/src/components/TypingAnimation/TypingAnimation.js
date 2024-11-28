@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef } from "react";
+import CssBaseline from "@mui/material/CssBaseline";
 import style from "./TypingAnimation.module.css";
+import { Container } from "@mui/material";
 
 const TypingAnimation = forwardRef(({ onComplete }, ref) => {
   const [text, setText] = useState("");
@@ -24,14 +26,19 @@ const TypingAnimation = forwardRef(({ onComplete }, ref) => {
   }, [fullText, typingSpeed, onComplete]);
 
   return (
-    <div ref={ref} className={style.landing}>
-      <div className={style.textWrapper}>
-        <span className={style.typedText}>
-          {text}
-          <span className={style.cursor}>▮</span>
-        </span>
-      </div>
-    </div>
+    <>
+      <CssBaseline />
+      <Container maxWidth={false} ref={ref} disableGutters>
+        <div className={style.landing}>
+          <div className={style.textWrapper}>
+            <span className={style.typedText}>
+              {text}
+              <span className={style.cursor}>▮</span>
+            </span>
+          </div>
+        </div>
+      </Container>
+    </>
   );
 });
 

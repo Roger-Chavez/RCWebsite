@@ -26,5 +26,6 @@
   color: white;
   /* aspect-ratio: 1 / 0.618; */
   max-height: 100vh;
+  max-width: 100vh;
   border-radius: 5px;
 }

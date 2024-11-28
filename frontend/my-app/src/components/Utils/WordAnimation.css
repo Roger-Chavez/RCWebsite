@@ -60,4 +60,5 @@ body {
 
 .sun-flower {
   color: #f1c40f;
+  transform: translateX(-60px);
 }

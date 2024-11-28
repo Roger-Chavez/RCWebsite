@@ -35,7 +35,6 @@ function App() {
       </CSSTransition>
       {showLandingPage ? (
         <>
-          {/* Landing Page Component with Transition */}
           <CSSTransition
             nodeRef={nodeRef1}
             in={showLandingPage}
