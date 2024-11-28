@@ -18,9 +18,10 @@ body {
 .textWrapper {
   font-size: 1.5rem;
   text-align: center;
-  max-width: 80vh;
+  max-width: 100vh;
   margin: 0 auto;
   color: white;
+  background-color: black;
 }
 
 /* Cursor blinking effect */
@@ -31,6 +32,7 @@ body {
   animation: blink 0.7s steps(2, start) infinite;
   width: fit-content; /* Shrinks to the content size */
   vertical-align: baseline;
+  background-color: black;
 }
 
 /* Typing effect */
@@ -47,8 +49,9 @@ body {
   text-align: center; /* Centers text inside the span */
   word-break: break-word; /* Forces long words to break */
   width: fit-content; /* Shrinks to the content size */
-  max-width: 90%;
+  max-width: 80%;
   padding: 0 10px;
   white-space: pre-wrap;
   display: inline;
+  background-color: black;
 }
