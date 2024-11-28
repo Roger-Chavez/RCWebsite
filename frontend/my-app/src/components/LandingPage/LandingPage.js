@@ -33,7 +33,12 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
           </Grid>
           <Grid size={{ xs: 2, md: 4.55 }} offset={{ xs: 0, md: 0 }}>
             <Item>
-              <Switch checked={checked} onChange={onClick} color="warning" />
+              <Switch
+                id="switch"
+                checked={checked}
+                onChange={onClick}
+                color="warning"
+              />
             </Item>
           </Grid>
           <Grid size={12}>
