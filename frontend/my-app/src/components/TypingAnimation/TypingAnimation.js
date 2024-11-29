@@ -3,7 +3,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import style from "./TypingAnimation.module.css";
 import { Container } from "@mui/material";
 
-const TypingAnimation = forwardRef(({ onComplete }, ref) => {
+const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
   const [text, setText] = useState("");
   const fullText = "Hi, I'm Roger Chavez. Welcome to my website!";
   const typingSpeed = 89; // Typing speed in ms
@@ -25,10 +25,12 @@ const TypingAnimation = forwardRef(({ onComplete }, ref) => {
     return () => clearInterval(interval);
   }, [fullText, typingSpeed, onComplete]);
 
+  // Display a button on the bottom that says skip and plays a loading bar witin the button
+  // that shows how fast the animation is moving - really the percentage is based on the chars in a string
   return (
     <>
       <CssBaseline />
-      <Container maxWidth={false} ref={ref} disableGutters>
+      <Container onClick={onClick} maxWidth={false} ref={ref} disableGutters>
         <div className={style.landing}>
           <div className={style.textWrapper}>
             <span className={style.typedText}>

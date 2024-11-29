@@ -31,14 +31,18 @@ function App() {
         classNames="animation"
         unmountOnExit
       >
-        <TypingAnimation ref={nodeRef2} onComplete={handleAnimationComplete} />
+        <TypingAnimation
+          ref={nodeRef2}
+          onClick={handleAnimationComplete}
+          onComplete={handleAnimationComplete}
+        />
       </CSSTransition>
       {showLandingPage ? (
         <>
           <CSSTransition
             nodeRef={nodeRef1}
             in={showLandingPage}
-            timeout={1000}
+            timeout={200}
             classNames="my-node"
           >
             <LandingPage ref={nodeRef1} checked={on} onClick={handleSwitch} />
