@@ -22,7 +22,7 @@
 }
 .App {
   text-align: center;
-  /* background-color: #282c34; */
+  background-color: "black";
   color: white;
   /* aspect-ratio: 1 / 0.618; */
   max-height: 100vh;

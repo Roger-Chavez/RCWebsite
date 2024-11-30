@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import style from "./TypingAnimation.module.css";
-import { Container } from "@mui/material";
+import { Container, Button } from "@mui/material";
 
 const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
   const [text, setText] = useState("");
@@ -43,13 +43,7 @@ const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
   return (
     <>
       <CssBaseline />
-      <Container
-        onClick={onClick}
-        maxWidth={false}
-        ref={ref}
-        // disableGutters
-        fixed
-      >
+      <Container maxWidth={false} ref={ref}>
         <div className={style.landing}>
           <div className={style.textWrapper}>
             <span className={style.typedText}>
@@ -59,6 +53,13 @@ const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
           </div>
         </div>
       </Container>
+      <Button
+        onClick={onClick}
+        className={style.anchorButton}
+        variant="outlined"
+      >
+        Skip
+      </Button>
     </>
   );
 });

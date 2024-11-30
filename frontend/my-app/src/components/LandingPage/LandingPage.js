@@ -32,6 +32,9 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
     color: checked ? theme.palette.text.secondary : theme.palette.text.primary,
     padding: theme.spacing(1),
     textAlign: "center",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
   }));
 
   const clickHandler = () => {
@@ -43,7 +46,7 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   return (
     <>
       <CssBaseline />
-      <Container xs={12} disableGutters>
+      <Container xs={12} disableGutters alignItems="stretch">
         <Grid
           size={{ xs: 12, sm: 12 }}
           container
@@ -58,8 +61,10 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
                 borderRadius: "5px",
                 color: "white",
                 ":hover": {
-                  background: "#465FEB",
-                  color: "black",
+                  // background: "#465FEB",
+                  // color: "black",
+                  margin: "-1px",
+                  border: "white 1px solid",
                 },
               }}
               variant="h1"
@@ -126,7 +131,7 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
               </p>
             </Collapse>
           </Grid>
-          <Grid size={{ xs: 12, sm: 6, md: 7.45 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 7.45 }} alignItems="stretch">
             <Item>
               <WordAnimation />
             </Item>

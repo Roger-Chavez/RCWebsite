@@ -2,10 +2,22 @@
 .mybody {
   background: black !important;
   max-width: 100%;
+  container: relative;
+  transition: all 0.5s ease;
+  line-height: 23px;
+  font-size: 18px;
+  font-family: sans-serif;
+  margin: auto;
+}
+
+.anchorButton {
+  position: absolute !important;
+  right: 0;
+  bottom: 0;
+  transform: translate(-450%, -450%);
 }
 
 .landing {
-  /* background-color: black; */
   color: white;
   height: 100vh;
   max-width: 100vh;
@@ -30,7 +42,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   animation: blink 0.7s steps(2, start) infinite;
-  /* width: fit-content; */
+  width: fit-content;
   vertical-align: baseline;
   background-color: black;
 }
