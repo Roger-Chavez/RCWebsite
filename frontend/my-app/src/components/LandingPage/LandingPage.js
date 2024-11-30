@@ -7,12 +7,14 @@ import {
   Paper,
   CssBaseline,
   Collapse,
+  IconButton,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid2";
 import WordAnimation from "../Utils/WordAnimation";
 import style from "./LandingPage.module.css";
-
+import AddIcon from "@mui/icons-material/Add";
+import zIndex from "@mui/material/styles/zIndex";
 const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   const [show, setShow] = useState(false);
 
@@ -41,7 +43,6 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
         >
           <Grid size={{ xs: 12 }}>
             <Typography
-              onClick={clickHandler}
               sx={{
                 borderRadius: "5px",
                 color: "white",
@@ -53,6 +54,12 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
               component="h2"
             >
               Mi Website
+              <AddIcon
+                className="anchorButton"
+                onClick={clickHandler}
+                color="action !important"
+                xs={{ zIndex }}
+              />
             </Typography>
             <Collapse in={show}>
               <h1 id="custom1" className={style.h1}>

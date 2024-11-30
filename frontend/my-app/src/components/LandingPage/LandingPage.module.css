@@ -97,3 +97,16 @@ sup {
 sub {
   bottom: -0.25em;
 }
+
+.anchorButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,10 +1,11 @@
 /* Fullscreen background */
-body {
+.mybody {
   background: black !important;
+  max-width: 100%;
 }
 
 .landing {
-  background-color: black;
+  /* background-color: black; */
   color: white;
   height: 100vh;
   max-width: 100vh;
@@ -16,21 +17,20 @@ body {
 
 /* Typing text wrapper */
 .textWrapper {
+  display: inline-block;
   font-size: 1.5rem;
   text-align: center;
-  max-width: 100vh;
   margin: 0 auto;
   color: white;
-  background-color: black;
 }
 
 /* Cursor blinking effect */
 .cursor {
-  display: inline-block; /* Ensures block-like behavior while staying centered */
+  display: inline-flex;
   font-weight: bold;
   font-size: 1.5rem;
   animation: blink 0.7s steps(2, start) infinite;
-  width: fit-content; /* Shrinks to the content size */
+  /* width: fit-content; */
   vertical-align: baseline;
   background-color: black;
 }
@@ -46,12 +46,12 @@ body {
 }
 
 .typedText {
-  text-align: center; /* Centers text inside the span */
-  word-break: break-word; /* Forces long words to break */
-  width: fit-content; /* Shrinks to the content size */
+  text-align: center;
+  word-break: break-word;
+  width: fit-content;
   max-width: 80%;
   padding: 0 10px;
   white-space: pre-wrap;
-  display: inline;
+  display: contents;
   background-color: black;
 }
