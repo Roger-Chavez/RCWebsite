@@ -121,6 +121,7 @@ sub {
 
 .anchorButton:hover {
   background-color: gold;
+  transform: translate(-50%, -50%);
 }
 
 .anchorButton:active {

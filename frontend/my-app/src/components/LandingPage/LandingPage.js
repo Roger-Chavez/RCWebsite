@@ -47,7 +47,7 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   return (
     <>
       <CssBaseline />
-      <Container xs={12} disableGutters alignItems="stretch">
+      <Container xs={12} alignItems="stretch">
         <Grid
           size={{ xs: 12, sm: 12 }}
           container
