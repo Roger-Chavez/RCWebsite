@@ -57,14 +57,12 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
             <Typography
               className={style.container}
               sx={{
-                background: "#1A2027",
+                background: checked ? "#1A2027" : "#fff",
                 borderRadius: "5px",
-                color: "white",
+                color: checked ? "white" : "black",
                 ":hover": {
-                  // background: "#465FEB",
-                  // color: "black",
                   margin: "-1px",
-                  border: "white 1px solid",
+                  border: checked ? "white 1px solid" : "black 1px solid",
                 },
               }}
               variant="h1"
