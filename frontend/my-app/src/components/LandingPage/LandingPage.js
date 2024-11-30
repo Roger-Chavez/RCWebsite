@@ -35,6 +35,7 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
     height: "100%",
     display: "flex",
     flexDirection: "column",
+    alignItems: "center",
   }));
 
   const clickHandler = () => {
@@ -62,7 +63,7 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
                 color: checked ? "white" : "black",
                 ":hover": {
                   margin: "-1px",
-                  border: checked ? "white 1px solid" : "black 1px solid",
+                  border: checked ? "white 1px solid" : "yellow 1px solid",
                 },
               }}
               variant="h1"

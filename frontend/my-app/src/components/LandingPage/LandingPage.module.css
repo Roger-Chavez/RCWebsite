@@ -120,5 +120,16 @@ sub {
 }
 
 .anchorButton:hover {
-  background-color: "#B38D42";
+  background-color: gold;
+}
+
+.anchorButton:active {
+  background-color: gold;
+  animation: moveRotate 0.1s linear;
+}
+
+@keyframes moveRotate {
+  to {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
 }
