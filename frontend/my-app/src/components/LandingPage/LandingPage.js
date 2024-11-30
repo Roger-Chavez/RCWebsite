@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
 import {
   Typography,
   Switch,
@@ -14,9 +14,18 @@ import Grid from "@mui/material/Grid2";
 import WordAnimation from "../Utils/WordAnimation";
 import style from "./LandingPage.module.css";
 import AddIcon from "@mui/icons-material/Add";
-import zIndex from "@mui/material/styles/zIndex";
 const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    // Apply body styles when this component is mounted
+    document.body.classList.add(style.article);
+
+    // Cleanup styles when the component is unmounted
+    return () => {
+      document.body.classList.remove(style.article);
+    };
+  }, [style]);
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: checked ? "#1A2027" : "#fff",
@@ -43,11 +52,14 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
         >
           <Grid size={{ xs: 12 }}>
             <Typography
+              className={style.container}
               sx={{
+                background: "#1A2027",
                 borderRadius: "5px",
                 color: "white",
                 ":hover": {
-                  background: "#1A2027",
+                  background: "#465FEB",
+                  color: "black",
                 },
               }}
               variant="h1"
@@ -55,10 +67,9 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
             >
               Mi Website
               <AddIcon
-                className="anchorButton"
+                className={style.anchorButton}
                 onClick={clickHandler}
-                color="action !important"
-                xs={{ zIndex }}
+                color="action"
               />
             </Typography>
             <Collapse in={show}>

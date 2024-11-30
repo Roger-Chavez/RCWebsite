@@ -9,7 +9,7 @@ import GoldenRuleSpiral from "./components/Utils/GoldenRuleSpiral";
 function App() {
   const [showLandingPage, setShowLandingPage] = useState(false);
   const [showTypingAnimation, setShowTypingAnimation] = useState(true);
-  const [on, setOn] = useState(false);
+  const [on, setOn] = useState(true);
   const nodeRef1 = useRef(null);
   const nodeRef2 = useRef(null);
   const handleAnimationComplete = () => {
