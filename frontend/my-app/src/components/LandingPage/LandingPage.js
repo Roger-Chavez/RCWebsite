@@ -27,7 +27,7 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   }, []);
 
   const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: checked ? "#1A2027" : "#fff",
+    background: checked ? "#1A2027" : "#fff",
     color: checked ? theme.palette.text.secondary : theme.palette.text.primary,
     padding: theme.spacing(1),
     textAlign: "center",

@@ -10,15 +10,15 @@ const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
   const indexRef = useRef(0);
   const currentText = useRef("");
 
-  useEffect(() => {
-    // Apply body styles when this component is mounted
-    document.body.classList.add(style.mybody);
+  // useEffect(() => {
+  //   // Apply body styles when this component is mounted
+  //   document.body.classList.add(style.mybody);
 
-    // Cleanup styles when the component is unmounted
-    return () => {
-      document.body.classList.remove(style.mybody);
-    };
-  }, [style]);
+  //   // Cleanup styles when the component is unmounted
+  //   return () => {
+  //     document.body.classList.remove(style.mybody);
+  //   };
+  // }, [style]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,7 +42,6 @@ const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
   // that shows how fast the animation is moving - really the percentage is based on the chars in a string
   return (
     <>
-      <CssBaseline />
       <Container maxWidth={false} ref={ref} disableGutters>
         <div className={style.landing}>
           <div className={style.textWrapper}>
