@@ -43,7 +43,7 @@ const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
   return (
     <>
       <CssBaseline />
-      <Container maxWidth={false} ref={ref}>
+      <Container maxWidth={false} ref={ref} disableGutters>
         <div className={style.landing}>
           <div className={style.textWrapper}>
             <span className={style.typedText}>
