@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid2";
 import WordAnimation from "../Utils/WordAnimation";
 import style from "./LandingPage.module.css";
 import AddIcon from "@mui/icons-material/Add";
+import BasicTabs from "../Navigation/BasicTabs";
 const LandingPage = forwardRef(({ checked, onClick }, ref) => {
   const [show, setShow] = useState(false);
 
@@ -47,6 +48,15 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
     <>
       <CssBaseline />
       <Container xs={12} alignItems="stretch" disableGutters>
+        <Grid
+          size={{ xs: 12, sm: 12 }}
+          container
+          spacing={2}
+          sx={{ padding: "20px" }}
+          disableGutters
+        >
+          <BasicTabs></BasicTabs>
+        </Grid>
         <Grid
           size={{ xs: 12, sm: 12 }}
           container
