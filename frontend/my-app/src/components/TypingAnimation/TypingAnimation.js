@@ -2,23 +2,15 @@ import React, { useState, useEffect, useRef, forwardRef } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import style from "./TypingAnimation.module.css";
 import { Container, Button } from "@mui/material";
+import { useNavigate } from "react-router";
 
-const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
+const TypingAnimation = forwardRef(({ onComplete }, ref) => {
   const [text, setText] = useState("");
   const fullText = "Hi, I'm Roger Chavez. Welcome to my website!";
   const typingSpeed = 89; // Typing speed in ms
   const indexRef = useRef(0);
   const currentText = useRef("");
-
-  // useEffect(() => {
-  //   // Apply body styles when this component is mounted
-  //   document.body.classList.add(style.mybody);
-
-  //   // Cleanup styles when the component is unmounted
-  //   return () => {
-  //     document.body.classList.remove(style.mybody);
-  //   };
-  // }, [style]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,14 +21,15 @@ const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
         indexRef.current += 1;
       } else {
         clearInterval(interval);
-        onComplete();
-        // indexRef.current = 0;
-        // currentText.current = "";
-        // setText("");
+        navigate("/home");
       }
     }, typingSpeed);
     return () => clearInterval(interval);
-  }, [fullText, typingSpeed, onComplete]);
+  }, [fullText, typingSpeed, navigate]);
+
+  const clickHandler = () => {
+    navigate("/home");
+  };
 
   // Display a button on the bottom that says skip and plays a loading bar witin the button
   // that shows how fast the animation is moving - really the percentage is based on the chars in a string
@@ -53,7 +46,7 @@ const TypingAnimation = forwardRef(({ onComplete, onClick }, ref) => {
         </div>
       </Container>
       <Button
-        onClick={onClick}
+        onClick={clickHandler}
         className={style.anchorButton}
         variant="outlined"
       >

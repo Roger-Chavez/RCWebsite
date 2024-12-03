@@ -141,6 +141,7 @@ sub {
 
 .aboutme {
   max-width: 58%;
+  color: #fff;
 }
 
 @keyframes moveRotate {

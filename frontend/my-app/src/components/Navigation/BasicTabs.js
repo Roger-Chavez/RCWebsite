@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import { useLocation, Link } from "react-router";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -26,15 +27,17 @@ CustomTabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
-
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
+  const location = useLocation();
+
+  const routeToIndex = {
+    "/home": 0,
+    "/projects": 1,
+    "/hobbies": 2,
+  };
+
+  const currentTab = routeToIndex[location.pathname] || 0;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -44,24 +47,20 @@ export default function BasicTabs() {
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
-          value={value}
+          value={currentTab}
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Home" component={Link} to="/home" viewTransition />
+          <Tab
+            label="Projects"
+            component={Link}
+            to="/projects"
+            viewTransition
+          />
+          <Tab label="Hobbies" component={Link} to="/hobbies" viewTransition />
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>
-        Home
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        Projects
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        Hobbies
-      </CustomTabPanel>
     </Box>
   );
 }

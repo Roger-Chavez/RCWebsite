@@ -14,9 +14,9 @@ import WordAnimation from "../Utils/WordAnimation";
 import style from "./LandingPage.module.css";
 import AddIcon from "@mui/icons-material/Add";
 import BasicTabs from "../Navigation/BasicTabs";
-const LandingPage = forwardRef(({ checked, onClick }, ref) => {
+const LandingPage = forwardRef((props, ref) => {
   const [show, setShow] = useState(false);
-
+  const [checked, setCheck] = useState(true);
   useEffect(() => {
     // Apply body styles when this component is mounted
     document.body.classList.add(checked ? style.article : style.article2);
@@ -42,6 +42,10 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
     setShow((prev) => {
       return !prev;
     });
+  };
+
+  const switchHandler = () => {
+    setCheck((prev) => !prev);
   };
 
   return (
@@ -161,7 +165,7 @@ const LandingPage = forwardRef(({ checked, onClick }, ref) => {
               <Switch
                 id="switch"
                 checked={checked}
-                onChange={onClick}
+                onChange={switchHandler}
                 color="warning"
               />
             </Item>
