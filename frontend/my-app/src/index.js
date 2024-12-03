@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router";
 import TypingAnimation from "./components/TypingAnimation/TypingAnimation";
 import LandingPage from "./components/Pages/LandingPage";
+import Home from "./components/Pages/Home";
 // const TypingAnimation = lazy(() =>
 //   import("./components/TypingAnimation/TypingAnimation")
 // );
@@ -20,7 +21,7 @@ root.render(
           {/* Intro Animation Route */}
           <Route path="/" element={<TypingAnimation />} />
           {/* Landing Page Route */}
-          <Route path="/home" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
 
           <Route path="/projects" element={<Projects />} />
           <Route path="/hobbies" element={<Hobbies />} />
