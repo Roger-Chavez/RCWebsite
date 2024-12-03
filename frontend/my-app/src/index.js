@@ -1,27 +1,31 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import LandingPage from "./components/Pages/LandingPage";
-import TypingAnimation from "./components/TypingAnimation/TypingAnimation";
-import Projects from "./components/Pages/Projects";
-import Hobbies from "./components/Pages/Hobbies";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router";
-
+import TypingAnimation from "./components/TypingAnimation/TypingAnimation";
+import LandingPage from "./components/Pages/LandingPage";
+// const TypingAnimation = lazy(() =>
+//   import("./components/TypingAnimation/TypingAnimation")
+// );
+const Projects = lazy(() => import("./components/Pages/Projects"));
+const Hobbies = lazy(() => import("./components/Pages/Hobbies"));
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <Routes>
-        {/* Intro Animation Route */}
-        <Route path="/" element={<TypingAnimation />} />
-        {/* Landing Page Route */}
-        <Route path="/home" element={<LandingPage />} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          {/* Intro Animation Route */}
+          <Route path="/" element={<TypingAnimation />} />
+          {/* Landing Page Route */}
+          <Route path="/home" element={<LandingPage />} />
 
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/hobbies" element={<Hobbies />} />
-      </Routes>
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/hobbies" element={<Hobbies />} />
+        </Routes>
+      </Suspense>
     </React.StrictMode>
   </BrowserRouter>
 );
