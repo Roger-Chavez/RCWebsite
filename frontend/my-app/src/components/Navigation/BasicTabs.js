@@ -5,7 +5,6 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { useLocation, Link } from "react-router";
 import styles from "./BasicTabs.module.css";
-import { CssBaseline } from "@mui/material";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,6 +47,8 @@ export default function BasicTabs() {
     <>
       <Box
         sx={{
+          position: "relative",
+          zIndex: 1,
           display: "flex",
           justifyContent: "center",
           width: "100%",

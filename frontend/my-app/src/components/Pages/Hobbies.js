@@ -10,7 +10,11 @@ function Hobbies() {
   };
 
   return (
-    <Container maxWidth={"lg"} disableGutters>
+    <Container
+      maxWidth={"lg"}
+      disableGutters
+      sx={{ background: "yellow", height: "100vh", marginTop: "-15px" }}
+    >
       <Grid container columns={12}>
         <Grid
           size={{ xs: 12, sm: 12, md: 12 }}
@@ -25,7 +29,7 @@ function Hobbies() {
         </Grid>
         <Grid size={{ xs: 12, sm: 12, md: 12 }}>
           {handleResize()}
-          <h1>Hobbies Page</h1>
+          <h1 style={{ "text-align": "center" }}>Hobbies Page</h1>
         </Grid>
       </Grid>
     </Container>
