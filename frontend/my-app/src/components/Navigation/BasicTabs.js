@@ -48,8 +48,6 @@ export default function BasicTabs() {
     <>
       <Box
         sx={{
-          position: "fixed",
-          top: 0,
           display: "flex",
           justifyContent: "center",
           width: "100%",

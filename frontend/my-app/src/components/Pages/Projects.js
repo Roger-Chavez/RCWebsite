@@ -4,38 +4,28 @@ import { Container } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
 function Projects() {
-  const styles = {
-    Container: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      minHeight: "100vh",
-      width: "100vh",
-      flexDirection: "column",
-      margin: 0,
-    },
-    text: {
-      textAlign: "center",
-    },
+  // Handle resize event in Home component
+  const handleResize = () => {
+    window.dispatchEvent(new Event("resize")); // Trigger layout recalculation
   };
 
   return (
     <Container maxWidth={"lg"} disableGutters>
-      <Grid container columns={12}>
+      <Grid container columns={12} sx={{ position: "relative" }}>
         <Grid
           size={{ xs: 12, sm: 12, md: 12 }}
           sx={{
-            position: "fixed",
-            top: 0,
-            width: "100vh",
             zIndex: 1,
             alignContent: "center",
+            display: "flex",
+            width: "100%",
           }}
         >
           <BasicTabs />
         </Grid>
         <Grid size={{ xs: 12, sm: 12, md: 12 }}>
-          <h1 style={styles.text}>Projects Page</h1>
+          {handleResize()}
+          <h1>Projects Page</h1>
         </Grid>
       </Grid>
     </Container>
