@@ -17,6 +17,7 @@ import BasicTabs from "../Navigation/BasicTabs";
 const LandingPage = forwardRef((props, ref) => {
   const [show, setShow] = useState(false);
   const [checked, setCheck] = useState(true);
+
   useEffect(() => {
     // Apply body styles when this component is mounted
     document.body.classList.add(checked ? style.article : style.article2);
@@ -27,15 +28,18 @@ const LandingPage = forwardRef((props, ref) => {
     };
   }, []);
 
+  useEffect(() => {
+    window.dispatchEvent(new Event("resize")); // Trigger layout recalculation
+  }, [show]);
+
   const Item = styled(Paper)(({ theme }) => ({
     background: checked ? "#1A2027" : "#fff",
     color: checked ? theme.palette.text.secondary : theme.palette.text.primary,
     padding: theme.spacing(1),
     textAlign: "center",
     height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    display: "block",
+    alignContent: "center",
   }));
 
   const clickHandler = () => {
@@ -51,21 +55,13 @@ const LandingPage = forwardRef((props, ref) => {
   return (
     <>
       <CssBaseline />
-      <Container xs={12} alignItems="stretch" disableGutters>
+      <Container size={{ xs: 12 }} alignItems="stretch" disableGutters>
         <Grid
           size={{ xs: 12, sm: 12 }}
           container
           spacing={2}
-          sx={{ padding: "20px" }}
-          disableGutters
-        >
-          <BasicTabs></BasicTabs>
-        </Grid>
-        <Grid
-          size={{ xs: 12, sm: 12 }}
-          container
-          spacing={2}
-          sx={{ padding: "20px" }}
+          columns={12}
+          sx={{ paddingTop: "32px", paddingBottom: "32px" }}
           disableGutters
         >
           <Grid size={{ xs: 12 }}>
@@ -76,7 +72,6 @@ const LandingPage = forwardRef((props, ref) => {
                 borderRadius: "5px",
                 textAlign: "center",
                 width: "100%",
-                padding: "15px 15px 15px 15px",
                 color: checked ? "white" : "black",
                 overflowWrap: "break-word",
                 wordBreak: "break-word",
@@ -174,7 +169,7 @@ const LandingPage = forwardRef((props, ref) => {
               />
             </Item>
           </Grid>
-          <Grid size={{ xs: 12, sm: 12 }}>
+          {/* <Grid size={{ xs: 12, sm: 12 }} spacing={2}>
             <Item>
               <a
                 href="https://www.buymeacoffee.com/chavezroger"
@@ -187,9 +182,8 @@ const LandingPage = forwardRef((props, ref) => {
                 />
               </a>
             </Item>
-          </Grid>
+          </Grid> */}
         </Grid>
-        <Box xs={4} sm={12} />
       </Container>
     </>
   );

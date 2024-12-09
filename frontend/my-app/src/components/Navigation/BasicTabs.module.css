@@ -1,0 +1,19 @@
+.tab {
+  background: #ffffff60;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.tab:hover {
+  background: #ffffff90;
+}
+
+.tab:active {
+  background: white;
+  transition: background 0.2s ease;
+}
+
+/* Style for the active tab */
+.Mui-selected {
+  background-color: yellow;
+  color: white;
+}

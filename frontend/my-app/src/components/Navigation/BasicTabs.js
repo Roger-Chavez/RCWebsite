@@ -4,6 +4,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { useLocation, Link } from "react-router";
+import styles from "./BasicTabs.module.css";
+import { CssBaseline } from "@mui/material";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -30,7 +32,6 @@ CustomTabPanel.propTypes = {
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
   const location = useLocation();
-
   const routeToIndex = {
     "/home": 0,
     "/projects": 1,
@@ -44,23 +45,66 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs
-          value={currentTab}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
-          <Tab label="Home" component={Link} to="/home" viewTransition />
-          <Tab
-            label="Projects"
-            component={Link}
-            to="/projects"
-            viewTransition
-          />
-          <Tab label="Hobbies" component={Link} to="/hobbies" viewTransition />
-        </Tabs>
+    <>
+      <Box
+        sx={{
+          position: "sticky",
+          top: 0,
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs
+            value={currentTab}
+            onChange={handleChange}
+            aria-label="basic tabs example"
+          >
+            <Tab
+              className={styles.tab}
+              label="Home"
+              component={Link}
+              to="/home"
+              viewTransition
+              sx={{
+                "&.Mui-selected": {
+                  color: "#1976d2",
+                  backgroundColor: "white",
+                },
+              }}
+            />
+            <Tab
+              className={styles.tab}
+              label="Projects"
+              component={Link}
+              to="/projects"
+              viewTransition
+              sx={{
+                "&.Mui-selected": {
+                  color: "#1976d2",
+                  backgroundColor: "white",
+                },
+              }}
+            />
+            <Tab
+              className={styles.tab}
+              label="Hobbies"
+              component={Link}
+              to="/hobbies"
+              viewTransition
+              sx={{
+                "&.Mui-selected": {
+                  color: "#1976d2",
+                  backgroundColor: "white",
+                },
+              }}
+            />
+          </Tabs>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
