@@ -20,20 +20,21 @@ function Hobbies() {
   };
 
   return (
-    <Container style={styles.Container}>
-      <Grid container columns={12} sx={{ width: "100vh" }}>
+    <Container maxWidth={"lg"} disableGutters>
+      <Grid container columns={12}>
         <Grid
-          size={{ xs: 12 }}
+          size={{ xs: 12, sm: 12, md: 12 }}
           sx={{
             position: "fixed",
             top: 0,
             width: "100vh",
             zIndex: 1,
+            alignContent: "center",
           }}
         >
           <BasicTabs />
         </Grid>
-        <Grid size={{ xs: 12 }}>
+        <Grid size={{ xs: 12, sm: 12, md: 12 }}>
           <h1 style={styles.text}>Hobbies Page</h1>
         </Grid>
       </Grid>

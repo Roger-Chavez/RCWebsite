@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BasicTabs from "../Navigation/BasicTabs";
 import LandingPage from "./LandingPage";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import zIndex from "@mui/material/styles/zIndex";
 
 function Home() {
   const styles = {
@@ -18,22 +17,35 @@ function Home() {
     },
   };
 
+  // Handle resize event in Home component
+  const handleResize = () => {
+    window.dispatchEvent(new Event("resize")); // Trigger layout recalculation
+  };
+
+  useEffect(() => {
+    // Add resize event listener
+    window.addEventListener("resize", handleResize);
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <Container style={styles.Container}>
-      <Grid container columns={12} sx={{ width: "100vh" }}>
+    <Container maxWidth={"lg"} disableGutters>
+      <Grid container columns={12}>
         <Grid
-          size={{ xs: 12 }}
+          size={{ xs: 12, sm: 12, md: 12 }}
           sx={{
             position: "fixed",
             top: 0,
             width: "100vh",
             zIndex: 1,
+            alignContent: "center",
           }}
         >
           <BasicTabs />
         </Grid>
-        <Grid size={{ xs: 12 }}>
-          <LandingPage />
+        <Grid size={{ xs: 12, sm: 12, md: 12 }}>
+          <LandingPage resize={handleResize} />
         </Grid>
       </Grid>
     </Container>

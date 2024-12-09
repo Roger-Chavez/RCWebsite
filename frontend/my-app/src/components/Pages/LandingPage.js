@@ -3,7 +3,6 @@ import {
   Typography,
   Switch,
   Container,
-  Box,
   Paper,
   CssBaseline,
   Collapse,
@@ -14,7 +13,7 @@ import WordAnimation from "../Utils/WordAnimation";
 import style from "./LandingPage.module.css";
 import AddIcon from "@mui/icons-material/Add";
 import BasicTabs from "../Navigation/BasicTabs";
-const LandingPage = forwardRef((props, ref) => {
+const LandingPage = forwardRef((resize, ref) => {
   const [show, setShow] = useState(false);
   const [checked, setCheck] = useState(true);
 
@@ -55,16 +54,20 @@ const LandingPage = forwardRef((props, ref) => {
   return (
     <>
       <CssBaseline />
-      <Container size={{ xs: 12 }} alignItems="stretch" disableGutters>
+      <Container maxWidth={"lg"} disableGutters>
         <Grid
-          size={{ xs: 12, sm: 12 }}
+          size={{ xs: 12, sm: 12, md: 12 }}
           container
           spacing={2}
           columns={12}
-          sx={{ paddingTop: "32px", paddingBottom: "32px" }}
+          sx={{
+            paddingTop: "32px",
+            paddingBottom: "32px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
           disableGutters
         >
-          <Grid size={{ xs: 12 }}>
+          <Grid size={{ xs: 12, sm: 12, md: 12 }}>
             <Typography
               className={style.container}
               sx={{
@@ -154,12 +157,12 @@ const LandingPage = forwardRef((props, ref) => {
               </div>
             </Collapse>
           </Grid>
-          <Grid size={{ xs: 12, sm: 6, md: 7.45 }} alignItems="stretch">
+          <Grid size={{ xs: 12, sm: 12, md: 7.45 }} alignItems="stretch">
             <Item>
               <WordAnimation />
             </Item>
           </Grid>
-          <Grid size={{ xs: 12, sm: 6, md: 4.55 }} offset={{ xs: 0, md: 0 }}>
+          <Grid size={{ xs: 12, sm: 12, md: 4.55 }} offset={{ xs: 0, md: 0 }}>
             <Item>
               <Switch
                 id="switch"
