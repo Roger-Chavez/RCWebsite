@@ -12,7 +12,6 @@ import Grid from "@mui/material/Grid2";
 import WordAnimation from "../Utils/WordAnimation";
 import style from "./LandingPage.module.css";
 import AddIcon from "@mui/icons-material/Add";
-import BasicTabs from "../Navigation/BasicTabs";
 const LandingPage = forwardRef(({ resize }, ref) => {
   const [show, setShow] = useState(false);
   const [checked, setCheck] = useState(true);
@@ -74,40 +73,44 @@ const LandingPage = forwardRef(({ resize }, ref) => {
           disableGutters
         >
           <Grid size={{ xs: 12, sm: 12, md: 12 }}>
-            <Typography
-              className={style.container}
-              sx={{
-                background: checked ? "#1A2027" : "#fff",
-                borderRadius: "5px",
-                textAlign: "center",
-                width: "100%",
-                color: checked ? "white" : "black",
-                overflowWrap: "break-word",
-                wordBreak: "break-word",
-                letterSpacing: "-0.06em",
-                fontWeight: 100,
-                ":hover": {
-                  margin: "-1px",
-                  border: checked ? "white 1px solid" : "yellow 1px solid",
-                },
-              }}
-              variant="h1"
-              component="h2"
-            >
-              Mi Website
-              <AddIcon
-                className={style.anchorButton}
-                onClick={clickHandler}
-                color="action"
-              />
-            </Typography>
-            <Collapse in={show}>
-              <div className={style.collapseContainer}>
-                <div className={style.aboutme}>
-                  <p className={style.p}>About me</p>
+            <Grid size={{ xs: 12, sm: 12, md: 12 }}>
+              <Typography
+                className={style.container}
+                sx={{
+                  background: checked ? "#1A2027" : "#fff",
+                  borderRadius: "5px",
+                  textAlign: "center",
+                  width: "100%",
+                  color: checked ? "white" : "black",
+                  overflowWrap: "break-word",
+                  wordBreak: "break-word",
+                  letterSpacing: "-0.06em",
+                  fontWeight: 100,
+                  ":hover": {
+                    margin: "-1px",
+                    border: checked ? "white 1px solid" : "yellow 1px solid",
+                  },
+                }}
+                variant="h1"
+                component="h2"
+              >
+                Mi Website
+                <AddIcon
+                  className={style.anchorButton}
+                  onClick={clickHandler}
+                  color="action"
+                />
+              </Typography>
+            </Grid>
+            <Grid size={{ xs: 12, sm: 12, md: 12 }}>
+              <Collapse in={show}>
+                <div className={style.collapseContainer}>
+                  <div className={style.aboutme}>
+                    <p className={style.p}>About me</p>
+                  </div>
                 </div>
-              </div>
-            </Collapse>
+              </Collapse>
+            </Grid>
           </Grid>
           <Grid size={{ xs: 12, sm: 12, md: 7.45 }} alignItems="stretch">
             <Item>

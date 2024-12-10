@@ -27,14 +27,14 @@ body {
         transform-origin: center center 25px;
 
         &.out {
-          transform: rotateX(90deg);
-          transition: 1.618s cubic-bezier(0.6, 0, 0.7, 0.2);
+          transform: rotateY(90deg);
+          transition: 0.5s cubic-bezier(0.6, 0.4, 0.7, 0.6);
         }
         &.in {
-          transition: 1.618s ease;
+          transition: 3.5s ease;
         }
         &.behind {
-          transform: rotateX(-90deg);
+          transform: rotateY(-90deg);
         }
       }
     }

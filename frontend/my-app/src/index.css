@@ -5,7 +5,7 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: "black !important";
+  /* background: "black !important"; */
   transition: all 0.1s ease;
 }
 

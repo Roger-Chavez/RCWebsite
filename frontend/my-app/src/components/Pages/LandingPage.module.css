@@ -1,4 +1,4 @@
-html,
+/* html,
 .root {
   font-size: 18px;
   line-height: 23px;
@@ -78,7 +78,6 @@ ol ul {
   text-align: left;
 }
 
-/* Let's make sure all's aligned */
 hr,
 .hr {
   border: 1px solid;
@@ -104,7 +103,7 @@ sup {
 }
 sub {
   bottom: -0.25em;
-}
+} */
 
 .container {
   position: relative;
@@ -133,7 +132,7 @@ sub {
   animation: moveRotate 0.1s linear;
 }
 
-.collapseContainer {
+/* .collapseContainer {
   width: 100%;
   max-height: fit-content;
   display: flex;
@@ -143,7 +142,7 @@ sub {
 .aboutme {
   max-width: 58%;
   color: #fff;
-}
+} */
 
 @keyframes moveRotate {
   to {

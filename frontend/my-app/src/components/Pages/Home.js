@@ -11,7 +11,11 @@ function Home() {
   };
 
   return (
-    <Container maxWidth={"lg"} disableGutters sx={{ height: "100vh" }}>
+    <Container
+      maxWidth={"lg"}
+      disableGutters
+      sx={{ height: "100vh", background: "#6094B3" }}
+    >
       <Grid container columns={12}>
         <Grid
           size={{ xs: 12, sm: 12, md: 12 }}
