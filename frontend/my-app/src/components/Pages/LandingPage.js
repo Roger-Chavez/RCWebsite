@@ -75,6 +75,7 @@ const LandingPage = forwardRef(({ resize }, ref) => {
           <Grid size={{ xs: 12, sm: 12, md: 12 }}>
             <Grid size={{ xs: 12, sm: 12, md: 12 }}>
               <Typography
+                onClick={clickHandler}
                 sx={{
                   background: checked ? "#1A2027" : "#fff",
                   borderRadius: "5px",
@@ -94,11 +95,11 @@ const LandingPage = forwardRef(({ resize }, ref) => {
                 component="h2"
               >
                 Mi Website
-                <AddIcon
+                {/* <AddIcon
                   className={style.anchorButton}
                   onClick={clickHandler}
                   color="action"
-                />
+                /> */}
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, sm: 12, md: 12 }}>
