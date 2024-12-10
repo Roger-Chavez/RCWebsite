@@ -1,4 +1,4 @@
-/* html,
+html,
 .root {
   font-size: 18px;
   line-height: 23px;
@@ -8,7 +8,7 @@
   font-size: 18px;
   line-height: 23px;
   margin: auto;
-  background-color: #282c34;
+  background-color: #6094b3;
   justify-content: center;
 }
 .article2 {
@@ -103,7 +103,7 @@ sup {
 }
 sub {
   bottom: -0.25em;
-} */
+}
 
 .container {
   position: relative;
@@ -132,14 +132,14 @@ sub {
   animation: moveRotate 0.1s linear;
 }
 
-/* .collapseContainer {
+.collapseContainer {
   width: 100%;
   max-height: fit-content;
   display: flex;
   justify-content: center;
 }
 
-.aboutme {
+/* .aboutme {
   max-width: 58%;
   color: #fff;
 } */

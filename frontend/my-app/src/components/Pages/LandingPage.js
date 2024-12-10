@@ -75,7 +75,6 @@ const LandingPage = forwardRef(({ resize }, ref) => {
           <Grid size={{ xs: 12, sm: 12, md: 12 }}>
             <Grid size={{ xs: 12, sm: 12, md: 12 }}>
               <Typography
-                className={style.container}
                 sx={{
                   background: checked ? "#1A2027" : "#fff",
                   borderRadius: "5px",
