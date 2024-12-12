@@ -14,7 +14,7 @@ function Home() {
     <Container
       maxWidth={"lg"}
       disableGutters
-      sx={{ height: "100vh", background: "#6094B3" }}
+      sx={{ height: "100vh", background: "#6b758a" }}
     >
       <Grid container columns={12}>
         <Grid
