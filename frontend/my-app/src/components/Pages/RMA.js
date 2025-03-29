@@ -59,7 +59,7 @@ function RMA() {
     if (!inputText) {
       setCleanedText("");
       // Show error snackbar if input is empty
-      setSnackbarMessage("Please input RMA text!");
+      setSnackbarMessage("Please input text!");
       setSnackbarSeverity("error");
       setOpenSnackbar(true);
       return;
@@ -83,7 +83,7 @@ function RMA() {
     setCleanedText(finalText); // ✅ Update state
 
     if (finalText) {
-      setSnackbarMessage("RMA text processed successfully!");
+      setSnackbarMessage("Text processed successfully!");
       setSnackbarSeverity("success");
       setOpenSnackbar(true);
     }
@@ -127,7 +127,7 @@ function RMA() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h2" sx={{ flexGrow: 1, fontWeight: "bold" }}>
-            RMA Parser
+            Text Parser
           </Typography>
         </Toolbar>
       </AppBar>
@@ -182,7 +182,7 @@ function RMA() {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {"RMA text cleaned successfully!"}
+            {"Text cleaned successfully!"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
