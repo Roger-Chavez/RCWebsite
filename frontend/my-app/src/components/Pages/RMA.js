@@ -160,7 +160,7 @@ function RMA() {
           >
             <TextField
               id="text-multiline"
-              label="Paste RMAs Here"
+              label="Paste Text Here"
               variant="outlined"
               multiline
               rows={10}
