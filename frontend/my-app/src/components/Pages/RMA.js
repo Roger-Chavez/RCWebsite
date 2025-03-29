@@ -77,12 +77,16 @@ function RMA() {
       }
     });
 
-    // Join each item in the list with ", "
-    setCleanedText(cleanedList.join(", "));
+    let finalText = cleanedList.join(", ");
 
-    setSnackbarMessage("RMA text processed successfully!");
-    setSnackbarSeverity("success");
-    setOpenSnackbar(true);
+    setCleanedText(finalText); // ✅ Update state
+
+    if (finalText) {
+      setSnackbarMessage("RMA text processed successfully!");
+      setSnackbarSeverity("success");
+      setOpenSnackbar(true);
+      setTimeout(() => setOpen(true), 100); // ✅ Ensure dialog opens after state updates
+    }
   };
 
   // Handle resize event in Home component
