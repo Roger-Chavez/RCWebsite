@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   TextField,
@@ -35,6 +35,7 @@ function RMA() {
   };
 
   const handleClose = () => {
+    setCleanedText("");
     setOpen(false);
   };
 
@@ -85,9 +86,14 @@ function RMA() {
       setSnackbarMessage("RMA text processed successfully!");
       setSnackbarSeverity("success");
       setOpenSnackbar(true);
-      setTimeout(() => setOpen(true), 100); // ✅ Ensure dialog opens after state updates
     }
   };
+
+  useEffect(() => {
+    if (cleanedText && cleanedText !== "") {
+      setOpen(true); // Open dialog only if cleanedText is not empty
+    }
+  }, [cleanedText]);
 
   // Handle resize event in Home component
   const handleResize = () => {
