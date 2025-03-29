@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import TypingAnimation from "./components/TypingAnimation/TypingAnimation";
 import LandingPage from "./components/Pages/LandingPage";
 import Home from "./components/Pages/Home";
+import RMA from "./components/Pages/RMA";
 // const TypingAnimation = lazy(() =>
 //   import("./components/TypingAnimation/TypingAnimation")
 // );
@@ -25,6 +26,7 @@ root.render(
 
           <Route path="/projects" element={<Projects />} />
           <Route path="/hobbies" element={<Hobbies />} />
+          <Route path="/rma" element={<RMA />} />
         </Routes>
       </Suspense>
     </React.StrictMode>
