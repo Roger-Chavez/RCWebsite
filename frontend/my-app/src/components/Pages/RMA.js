@@ -104,15 +104,6 @@ function RMA() {
   };
 
   return (
-    // <motion.div
-    //   animate={{ backgroundColor: ["#ff69b4", "#BF7E9F"] }}
-    //   transition={{
-    //     duration: 2,
-    //     repeat: Infinity,
-    //     repeatType: "reverse",
-    //     ease: "linear",
-    //   }}
-    // >
     <Container
       maxWidth={"lg"}
       disableGutters
@@ -256,7 +247,6 @@ function RMA() {
         </Dialog>
       </Grid>
     </Container>
-    // </motion.div>
   );
 }
 
