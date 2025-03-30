@@ -16,6 +16,7 @@ import {
   Alert,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import { motion, inView, press, animate, hover } from "framer-motion";
 
 function RMA() {
   const [open, setOpen] = React.useState(false);
@@ -23,6 +24,8 @@ function RMA() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+
+  const MotionButton = motion(Button);
 
   const handleClickOpen = () => {
     processText();
@@ -101,13 +104,22 @@ function RMA() {
   };
 
   return (
+    // <motion.div
+    //   animate={{ backgroundColor: ["#ff69b4", "#BF7E9F"] }}
+    //   transition={{
+    //     duration: 2,
+    //     repeat: Infinity,
+    //     repeatType: "reverse",
+    //     ease: "linear",
+    //   }}
+    // >
     <Container
       maxWidth={"lg"}
       disableGutters
       sx={{
         width: "100vh",
         height: "100vh",
-        background: "lightblue",
+        background: "#A081A3",
       }}
     >
       <Snackbar
@@ -124,11 +136,17 @@ function RMA() {
           {snackbarMessage}
         </Alert>
       </Snackbar>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ background: "#F20F8C" }}>
         <Toolbar>
-          <Typography variant="h2" sx={{ flexGrow: 1, fontWeight: "bold" }}>
-            Text Parser
-          </Typography>
+          <motion.div
+            initial={{ x: "100vw" }} // Start off-screen (right)
+            animate={{ x: 0 }} // Move to its normal position
+            transition={{ type: "spring", stiffness: 36, damping: 10 }}
+          >
+            <Typography variant="h2" sx={{ flexGrow: 1, fontWeight: "bold" }}>
+              Text Parser
+            </Typography>
+          </motion.div>
         </Toolbar>
       </AppBar>
       <Grid container columns={12}>
@@ -164,6 +182,17 @@ function RMA() {
               variant="outlined"
               multiline
               rows={10}
+              sx={{
+                "& label.Mui-focused": {
+                  color: "#F23A0F",
+                  fontWeight: "bold", // Change label color when focused
+                },
+                "& .MuiOutlinedInput-root": {
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#F23A0F", // Change outline color when focused
+                  },
+                },
+              }}
             />
           </Box>
         </Grid>
@@ -171,9 +200,16 @@ function RMA() {
           spacing={2}
           sx={{ width: "100%", paddingRight: "5%", paddingLeft: "5%" }}
         >
-          <Button fullWidth variant="contained" onClick={handleClickOpen}>
+          <MotionButton
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            fullWidth
+            variant="contained"
+            onClick={handleClickOpen}
+            sx={{ background: "#F20F8C" }}
+          >
             Submit
-          </Button>
+          </MotionButton>
         </Box>
         <Dialog
           open={open}
@@ -181,29 +217,46 @@ function RMA() {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title">
+          <DialogTitle
+            id="alert-dialog-title"
+            sx={{ background: "#C82D82", color: "white" }}
+          >
             {"Parsed text below:"}
           </DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
+          <DialogContent sx={{ background: "#C82D82" }}>
+            <DialogContentText
+              id="alert-dialog-description"
+              sx={{ background: "#C82D82", color: "white" }}
+            >
               {cleanedText}
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
-            <Button
+          <DialogActions sx={{ background: "#C82D82" }}>
+            <MotionButton
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               variant="contained"
               color="primary"
               onClick={copyToClipboard}
+              sx={{ background: "#73405C" }}
             >
               Copy to clipboard
-            </Button>
-            <Button variant="outlined" onClick={handleClose} autoFocus>
+            </MotionButton>
+            <MotionButton
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              variant="contained"
+              onClick={handleClose}
+              autoFocus
+              sx={{ background: "#73405C" }}
+            >
               Close
-            </Button>
+            </MotionButton>
           </DialogActions>
         </Dialog>
       </Grid>
     </Container>
+    // </motion.div>
   );
 }
 
