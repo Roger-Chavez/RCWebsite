@@ -182,7 +182,7 @@ function RMA() {
           aria-describedby="alert-dialog-description"
         >
           <DialogTitle id="alert-dialog-title">
-            {"Text cleaned successfully!"}
+            {"Parsed text below:"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
