@@ -110,7 +110,8 @@ function RMA() {
       sx={{
         width: "100vh",
         height: "100vh",
-        background: "#A081A3",
+        // background: "#FDBB02",
+        background: "white",
       }}
     >
       <Snackbar
@@ -175,12 +176,12 @@ function RMA() {
               rows={10}
               sx={{
                 "& label.Mui-focused": {
-                  color: "#F23A0F",
+                  // color: "#D32C00",
                   fontWeight: "bold", // Change label color when focused
                 },
                 "& .MuiOutlinedInput-root": {
                   "&.Mui-focused fieldset": {
-                    borderColor: "#F23A0F", // Change outline color when focused
+                    // borderColor: "#D32C00", // Change outline color when focused
                   },
                 },
               }}
@@ -208,28 +209,22 @@ function RMA() {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle
-            id="alert-dialog-title"
-            sx={{ background: "#C82D82", color: "white" }}
-          >
+          <DialogTitle id="alert-dialog-title" sx={{}}>
             {"Parsed text below:"}
           </DialogTitle>
-          <DialogContent sx={{ background: "#C82D82" }}>
-            <DialogContentText
-              id="alert-dialog-description"
-              sx={{ background: "#C82D82", color: "white" }}
-            >
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description" sx={{}}>
               {cleanedText}
             </DialogContentText>
           </DialogContent>
-          <DialogActions sx={{ background: "#C82D82" }}>
+          <DialogActions>
             <MotionButton
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               variant="contained"
               color="primary"
               onClick={copyToClipboard}
-              sx={{ background: "#73405C" }}
+              sx={{ color: "white", background: "#F20F8C" }}
             >
               Copy to clipboard
             </MotionButton>
@@ -239,7 +234,7 @@ function RMA() {
               variant="contained"
               onClick={handleClose}
               autoFocus
-              sx={{ background: "#73405C" }}
+              sx={{ color: "white", background: "#F20F8C" }}
             >
               Close
             </MotionButton>
