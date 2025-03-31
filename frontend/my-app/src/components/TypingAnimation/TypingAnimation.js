@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, forwardRef } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import style from "./TypingAnimation.module.css";
 import { Container, Button } from "@mui/material";
 import { useNavigate } from "react-router";

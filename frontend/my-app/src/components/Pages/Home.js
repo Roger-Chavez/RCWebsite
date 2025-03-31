@@ -1,5 +1,4 @@
 import BasicTabs from "../Navigation/BasicTabs";
-import LandingPage from "./LandingPage";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
