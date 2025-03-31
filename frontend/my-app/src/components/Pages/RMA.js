@@ -176,12 +176,12 @@ function RMA() {
               rows={10}
               sx={{
                 "& label.Mui-focused": {
-                  // color: "#D32C00",
+                  color: "#F20F8C",
                   fontWeight: "bold", // Change label color when focused
                 },
                 "& .MuiOutlinedInput-root": {
                   "&.Mui-focused fieldset": {
-                    // borderColor: "#D32C00", // Change outline color when focused
+                    borderColor: "#F20F8C", // Change outline color when focused
                   },
                 },
               }}
