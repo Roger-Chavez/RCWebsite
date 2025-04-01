@@ -18,7 +18,7 @@ import {
 import Grid from "@mui/material/Grid2";
 import { motion, inView, press, animate, hover } from "framer-motion";
 
-function RMA() {
+function Parser() {
   const [open, setOpen] = React.useState(false);
   const [cleanedText, setCleanedText] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -245,4 +245,4 @@ function RMA() {
   );
 }
 
-export default RMA;
+export default Parser;

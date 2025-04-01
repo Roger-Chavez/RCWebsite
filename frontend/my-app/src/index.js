@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import TypingAnimation from "./components/TypingAnimation/TypingAnimation";
 import LandingPage from "./components/Pages/LandingPage";
 import Home from "./components/Pages/Home";
-import RMA from "./components/Pages/RMA";
+import Parser from "./components/Pages/Parser";
 // const TypingAnimation = lazy(() =>
 //   import("./components/TypingAnimation/TypingAnimation")
 // );
@@ -26,7 +26,9 @@ root.render(
 
           <Route path="/projects" element={<Projects />} />
           <Route path="/hobbies" element={<Hobbies />} />
-          <Route path="/rma" element={<RMA />} />
+          {/* <Route path="/rma" element={<RMA />} /> */}
+          <Route path="/rma" element={<Navigate to="/parser" replace />} />
+          <Route path="/parser" element={<Parser />} />
         </Routes>
       </Suspense>
     </React.StrictMode>
